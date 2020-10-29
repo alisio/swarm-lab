@@ -35,7 +35,7 @@ config.vm.define "machine3" do |machine3|
   machine3.vm.hostname = 'machine3'
   # machine3.vm.box_url = "ubuntu/precise64"
 
-  machine3.vm.network :private_network, ip: "192.168.56.102"
+  machine3.vm.network :private_network, ip: "192.168.56.103"
 
   machine3.vm.provider :virtualbox do |v|
     # v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -55,7 +55,9 @@ end
                     docker-engine
     yum install -y yum-utils
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    yum install -y docker-ce docker-ce-cli containerd.io
+    yum install -y \
+      docker-ce docker-ce-cli containerd.io \
+      net-tools
     systemctl start docker
     systemctl enable docker
   SHELL
