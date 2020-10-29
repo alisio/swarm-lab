@@ -10,3 +10,6 @@ machines:
     ansible_user: vagrant
     ansible_ssh_private_key_file: ~/.vagrant.d/insecure_private_key
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+    gluster_brick_dir: /gluster/brick
+    gluster_mount_dir: /mnt/gluster
+    gluster_brick_name: lab
