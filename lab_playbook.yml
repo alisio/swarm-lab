@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - geerlingguy.glusterfs
+  become: yes
+  tasks:
+    - name: disable selinux
+      selinux:
+        state: disabled
